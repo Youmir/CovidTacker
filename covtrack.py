@@ -8,17 +8,17 @@ def covtrack():
     soup = bs4.BeautifulSoup(req.text, 'lxml')
     index = -1
     data = soup.select('tr td')
-    country_name = input('Select a country :')
-    
-    for i in range(len(data)):
+    country_name = input('Select a country : ')
+
+    for i in range(len(data)): 
         if data[i].text.lower()==country_name.lower():
             index = i
             break
-        else:
-            print("This country doesn't exist")
-            covtrack()
+        # else:
+        #     print("This country doesn't exist")
+        #     covtrack()
             
-        
+                 
     for i in range(7):
         if i == 0:
             print("\nCountry name: "+str(data[i+index].text))
